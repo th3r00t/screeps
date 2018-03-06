@@ -1,10 +1,7 @@
 var roleharvest = require('role.harvest');
 var roleupgrade = require('role.upgrade');
-var gencreeps = require('maint.creeps');
-
-Game.creeps['Harvester1'].memory.role = 'harvester';
-Game.creeps['Harvester2'].memory.role = 'upgrader';
-Game.creeps['Upgrader1'].memory.role = 'upgrader';
+var rolebuilder = require('role.builder');
+var maintcreeps = require('maint.creeps');
 
 module.exports.loop = function () {
     for(var name in Game.creeps) {
@@ -15,7 +12,11 @@ module.exports.loop = function () {
         if(creep.memory.role == 'upgrader') {
             roleupgrade.run(creep);
         }
+        if(creep.memory.role == 'builder'){
+            rolebuilder.run(creep);
+        }
     }
     //Begin Maint Creeps Checks
-    maintcreeps.check();
+    maintcreeps.run();
+    maintcreeps.setMemory();
 }

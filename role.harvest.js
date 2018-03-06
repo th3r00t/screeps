@@ -1,5 +1,5 @@
 var roleharvest = {
-
+   /*sources[1] -- hard coded the designation to the closer source for now*/
     /** @param {Creep} creep **/
     run: function(creep) {
 	    if(creep.carry.energy < creep.carryCapacity) {
