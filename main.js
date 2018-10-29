@@ -7,7 +7,7 @@ var upgrader_tst = RegExp(/Upgrader/)
 var builder_tst = RegExp(/Builder/)
 module.exports.loop = function () {
     for(var name in Game.creeps) {
-        switch (key) {
+        switch (name) {
             case harvester_tst.test(name):
                 roleharvest.run(creep);
                 break;
