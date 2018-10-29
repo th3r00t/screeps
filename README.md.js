@@ -1,2 +1,0 @@
-# screeps
-My Screeps Repo

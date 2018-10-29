@@ -7,15 +7,18 @@ var upgrader_tst = RegExp(/Upgrader/)
 var builder_tst = RegExp(/Builder/)
 module.exports.loop = function () {
     for(var name in Game.creeps) {
-        var creep = Game.creeps[name];
-        if(creep.memory.role == 'harvester') {
-            roleharvest.run(creep);
-        }
-        if(creep.memory.role == 'upgrader') {
-            roleupgrade.run(creep);
-        }
-        if(creep.memory.role == 'builder'){
-            rolebuilder.run(creep);
+        switch (key) {
+            case harvester_tst.test(name):
+                roleharvest.run(creep);
+                break;
+            case upgrader_tst.test(name):
+                creep.memory.role == 'upgrader'
+                break;
+            case builder_tst.test(name):
+                rolebuilder.run(creep);
+                break;
+            default:
+                break;
         }
     }
     //Begin Maint Creeps Checks
