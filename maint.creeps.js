@@ -1,9 +1,9 @@
-var maintcreeps = {
-   
+var maintcreeps = {   
     run: function(creep){
         var c_count =  Game.creeps.length;
         console.log(c_count)
-        if(c_count == undefined){var init = true}      
+        if(c_count == null)  {var init = true}
+        console.log(init)     
         if (init == true || c_count < 6){
             var creep_num = c_count + 1;
             if(c_count < 2){
@@ -16,12 +16,9 @@ var maintcreeps = {
                 Game.spawns['Spawn1'].spawnCreep( [WORK,CARRY,MOVE,MOVE], 'Builder'+b_num);
             }
         }
-        else{
-            console.log('Found Creeps!');
-        }
+        else{console.log('Found Creeps!');}
     },
-    check: function(){
-        console.log('running check function');
+    check: function(){console.log('running check function');
     },
     setMemory: function(){
         var creep_count = 0;
