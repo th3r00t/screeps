@@ -3,7 +3,7 @@ var maintcreeps = {
     run: function(creep){
         var c_count =  Game.creeps.length;
         console.log(c_count)
-        if(c_count < 1){var init = true}      
+        if(c_count == undefined){var init = true}      
         if (init == true || c_count < 6){
             var creep_num = c_count + 1;
             if(c_count < 2){
