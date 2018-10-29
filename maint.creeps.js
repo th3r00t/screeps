@@ -6,7 +6,7 @@ var maintcreeps = {
         console.log(init)     
         if (init == true || c_count < 6){
             var creep_num = c_count + 1;
-            if(c_count < 2){
+            if(c_count < 2 || c_count == null){
                 Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Harvester'+creep_num );
             }
             if (c_count > 2 && creep_count < 4){
