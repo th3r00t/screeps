@@ -2,19 +2,18 @@ var maintcreeps = {
    
     run: function(creep){
         var c_count =  Game.creeps.length;
+        console.log(c_count)
         if(c_count < 1){var init = true}      
         if (init == true || c_count < 6){
             var creep_num = c_count + 1;
-            if(creep_count < 2){
-                Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 
-                    'Harvester'+creep_num );
+            if(c_count < 2){
+                Game.spawns['Spawn1'].spawnCreep( [WORK, CARRY, MOVE], 'Harvester'+creep_num );
             }
-            if (creep_count > 2 && creep_count < 4){
+            if (c_count > 2 && creep_count < 4){
                 Game.spawns['Spawn1'].spawnCreep( [WORK,CARRY,MOVE], 'Upgrader1');
             }
-            if (creep_count === 4){
-                Game.spawns['Spawn1'].spawnCreep( [WORK,CARRY,MOVE,MOVE], 
-                    'Builder'+b_num);
+            if (c_count === 4){
+                Game.spawns['Spawn1'].spawnCreep( [WORK,CARRY,MOVE,MOVE], 'Builder'+b_num);
             }
         }
         else{
